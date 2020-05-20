@@ -1,6 +1,6 @@
 [![Release](https://jitpack.io/v/jitpack/android-example.svg)](https://jitpack.io/#rommansabbir/AnimationX)
 # AnimationX
-An simple animation library for Android
+An simple & awesome animation library written in Kotlin for Android
 
 ## Screenshots
 
