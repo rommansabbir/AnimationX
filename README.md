@@ -35,6 +35,7 @@ Step 2. Add the dependency
 | Releases
 | ------------- |
 | 1.0           |
+| 1.0.1         |
 
 # Usages
         /**
@@ -90,8 +91,8 @@ Step 2. Add the dependency
         /**
          * On the other hand, if you want to show animation manually
          */
-         AnimationX.setDuration(2000)
-         .setAnimation(Attention.bounce(imageView, AnimationX.getNewAnimatorSet())).start()
+         AnimationX().setDuration(2000)
+         .setAnimation(Attention.bounce(imageView, AnimationX().getNewAnimatorSet())).start()
 
 
 
