@@ -97,8 +97,8 @@ fun View.animationXZoom(animationKey: String, duration: Long = 1000) {
 }
 
 private fun View.renderAnimation(key: String, animationKey: String, duration: Long) {
-    AnimationX.setDuration(duration)
-        .setAnimation(showAnimation(this, key, animationKey, AnimationX.getNewAnimatorSet()))
+    AnimationX().setDuration(duration)
+        .setAnimation(showAnimation(this, key, animationKey, AnimationX().getNewAnimatorSet()))
         .start()
 }
 
@@ -235,7 +235,7 @@ fun showAnimation(
                 else -> zoom.inDown(view, animatorSet)
             }
         }
-        else -> Attention.bounce(view, AnimationX.getNewAnimatorSet())
+        else -> Attention.bounce(view, AnimationX().getNewAnimatorSet())
     }
 
 }

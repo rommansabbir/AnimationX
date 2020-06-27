@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         /**
          * On the other hand, if you want to show animation manually
          */
-        AnimationX.setDuration(2000)
-            .setAnimation(Attention.bounce(imageView, AnimationX.getNewAnimatorSet())).start()
+        AnimationX().setDuration(2000)
+            .setAnimation(Attention.bounce(imageView, AnimationX().getNewAnimatorSet())).start()
     }
 }
