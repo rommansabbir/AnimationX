@@ -34,8 +34,12 @@ Step 2. Add the dependency
 
 | Releases
 | ------------- |
-| 1.0           |
-| 1.0.1         |
+| 2.0           |
+
+### Whats new in this version?
+- Added Animation Listener
+- Performance Improved
+
 
 # Usages
         /**
@@ -48,7 +52,24 @@ Step 2. Add the dependency
         /**
         * To show attention animation, call [animationXAttention] & pass the animation key
         */
-        imageView.animationXAttention(Attention.ATTENTION_BOUNCE)
+            imageView.animationXAttention(Attention.ATTENTION_BOUNCE, duration = 500, listener = object : Animator.AnimatorListener{
+                override fun onAnimationStart(p0: Animator?) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onAnimationEnd(p0: Animator?) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onAnimationCancel(p0: Animator?) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onAnimationRepeat(p0: Animator?) {
+                    TODO("Not yet implemented")
+                }
+
+            })
 
 
         /**

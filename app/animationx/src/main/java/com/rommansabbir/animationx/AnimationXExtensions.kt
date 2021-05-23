@@ -1,5 +1,6 @@
 package com.rommansabbir.animationx
 
+import android.animation.Animator
 import android.animation.AnimatorSet
 import android.view.View
 import com.rommansabbir.animationx.Attention.ATTENTION
@@ -68,41 +69,75 @@ import com.rommansabbir.animationx.Zoom.ZOOM_OUT_RIGHT
 import com.rommansabbir.animationx.Zoom.ZOOM_OUT_UP
 
 
-fun View.animationXAttention(animationKey: String, duration: Long = 1000) {
-    renderAnimation(ATTENTION, animationKey, duration)
+fun View.animationXAttention(
+    animationKey: String,
+    duration: Long = 1000,
+    listener: Animator.AnimatorListener? = null
+) {
+    renderAnimation(ATTENTION, animationKey, duration, listener)
 }
 
-fun View.animationXBounce(animationKey: String, duration: Long = 1000) {
-    renderAnimation(BOUNCE, animationKey, duration)
+fun View.animationXBounce(
+    animationKey: String,
+    duration: Long = 1000,
+    listener: Animator.AnimatorListener? = null
+) {
+    renderAnimation(BOUNCE, animationKey, duration, listener)
 }
 
-fun View.animationXFade(animationKey: String, duration: Long = 1000) {
-    renderAnimation(FADE, animationKey, duration)
+fun View.animationXFade(
+    animationKey: String,
+    duration: Long = 1000,
+    listener: Animator.AnimatorListener? = null
+) {
+    renderAnimation(FADE, animationKey, duration, listener)
 }
 
-fun View.animationXFlip(animationKey: String, duration: Long = 1000) {
-    renderAnimation(FLIP, animationKey, duration)
+fun View.animationXFlip(
+    animationKey: String,
+    duration: Long = 1000,
+    listener: Animator.AnimatorListener? = null
+) {
+    renderAnimation(FLIP, animationKey, duration, listener)
 }
 
-fun View.animationXRotate(animationKey: String, duration: Long = 1000) {
-    renderAnimation(ROTATE, animationKey, duration)
+fun View.animationXRotate(
+    animationKey: String,
+    duration: Long = 1000,
+    listener: Animator.AnimatorListener? = null
+) {
+    renderAnimation(ROTATE, animationKey, duration, listener)
 }
 
-fun View.animationXSlide(animationKey: String, duration: Long = 1000) {
-    renderAnimation(SLIDE, animationKey, duration)
+fun View.animationXSlide(
+    animationKey: String,
+    duration: Long = 1000,
+    listener: Animator.AnimatorListener? = null
+) {
+    renderAnimation(SLIDE, animationKey, duration, listener)
 }
 
-fun View.animationXZoom(animationKey: String, duration: Long = 1000) {
-    renderAnimation(ZOOM, animationKey, duration)
+fun View.animationXZoom(
+    animationKey: String,
+    duration: Long = 1000,
+    listener: Animator.AnimatorListener? = null
+) {
+    renderAnimation(ZOOM, animationKey, duration, listener)
 }
 
-private fun View.renderAnimation(key: String, animationKey: String, duration: Long) {
-    AnimationX().setDuration(duration)
+fun View.renderAnimation(
+    key: String,
+    animationKey: String,
+    duration: Long,
+    listener: Animator.AnimatorListener? = null
+) {
+    val aniObject = AnimationX().setDuration(duration)
         .setAnimation(showAnimation(this, key, animationKey, AnimationX().getNewAnimatorSet()))
-        .start()
+    aniObject.getNewAnimatorSet().addListener(listener)
+    aniObject.start()
 }
 
-fun showAnimation(
+private fun showAnimation(
     view: View,
     key: String,
     animationKey: String,

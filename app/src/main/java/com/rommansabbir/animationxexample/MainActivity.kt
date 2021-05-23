@@ -1,5 +1,6 @@
 package com.rommansabbir.animationxexample
 
+import android.animation.Animator
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.rommansabbir.animationx.*
@@ -10,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         /**
          * Animation can be applied to all views which extends [View]
@@ -22,7 +24,27 @@ class MainActivity : AppCompatActivity() {
             /**
              * To show attention animation, call [animationXAttention] & pass the animation key
              */
-            imageView.animationXAttention(Attention.ATTENTION_BOUNCE)
+            imageView.animationXAttention(
+                Attention.ATTENTION_BOUNCE,
+                duration = 500,
+                listener = object : Animator.AnimatorListener {
+                    override fun onAnimationStart(p0: Animator?) {
+
+                    }
+
+                    override fun onAnimationEnd(p0: Animator?) {
+
+                    }
+
+                    override fun onAnimationCancel(p0: Animator?) {
+
+                    }
+
+                    override fun onAnimationRepeat(p0: Animator?) {
+
+                    }
+
+                })
         }
 
         bounceBtn.setOnClickListener {
